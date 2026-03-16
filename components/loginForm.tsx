@@ -25,9 +25,9 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const [email, setEmail] = useState<string>("")
+  const [email, setEmail] = useState<string>("test@test.com")
   const [emailInvalid, setEmailInvalid] = useState<boolean>(false)
-  const [password, setPassword] = useState<string>("")
+  const [password, setPassword] = useState<string>("test123")
   const [passwordInvalid, setPasswordInvalid] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const router = useRouter()
@@ -59,7 +59,7 @@ export function LoginForm({
       toast.error("No user found. Please sign up.")
     }
     if (data.success) {
-      router.push("/journals")
+      router.push("/journal")
     } else {
       toast.error("Log in failed. Please try again.")
     }

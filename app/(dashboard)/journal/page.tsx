@@ -1,9 +1,8 @@
-import Header from "@/components/header"
 import { JournalForm } from "@/components/journalForm"
 import { createClient } from "@/lib/auth/supabaseServer"
 import { redirect } from "next/navigation"
 
-export default async function JournalsPage() {
+export default async function JournalPage() {
   const supabase = await createClient()
   const { data, error } = await supabase.auth.getUser()
 
@@ -13,8 +12,6 @@ export default async function JournalsPage() {
 
   return (
     <div className="landing-gradient min-h-screen bg-background text-foreground">
-      <Header />
-
       <div className="decorative-blobs" aria-hidden />
 
       <main className="relative z-10 container mx-auto px-6 py-12">

@@ -1,11 +1,8 @@
-import Header from "@/components/header"
 import Link from "next/link"
 
 export default function Page() {
   return (
-    <div className="landing-gradient flex min-h-screen flex-col bg-background to-indigo-100 text-foreground">
-      <Header />
-
+    <div className="landing-gradient flex h-full min-h-screen w-full flex-col bg-background to-indigo-100 text-foreground">
       <div className="decorative-blobs">
         <svg
           className="decorative-blob"

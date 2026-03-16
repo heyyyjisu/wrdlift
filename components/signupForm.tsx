@@ -60,7 +60,7 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
     })
     const data = await res.json()
     if (data.success) {
-      router.push("/journals")
+      router.push("/journal")
     } else {
       console.error("Error signing up")
     }

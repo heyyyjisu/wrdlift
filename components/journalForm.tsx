@@ -91,7 +91,7 @@ export function JournalForm({
       })
 
       if (!aiRes.ok) {
-        console.error("ai error")
+        console.error("Ai response failed.")
       } else {
         const aiData = await aiRes.json()
         let replacements: {

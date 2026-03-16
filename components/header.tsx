@@ -9,7 +9,7 @@ export default async function Header() {
   const loggedIn = Boolean(data?.user)
 
   return (
-    <header className="border-primary-400 relative z-20 flex items-center justify-between border-b px-4 py-3 md:px-8">
+    <header className="border-primary-400 relative z-20 flex items-center justify-between border-b bg-transparent px-4 py-3 md:px-8">
       <div className="flex items-center gap-4">
         <Link href="/" className="text-lg font-bold">
           Wrdlift
@@ -30,7 +30,15 @@ export default async function Header() {
             </Button>
           </>
         ) : (
-          <LogoutButton />
+          <>
+            <Link
+              href="/journals"
+              className="hidden text-sm text-muted-foreground hover:underline sm:inline-block"
+            >
+              My journals
+            </Link>
+            <LogoutButton />
+          </>
         )}
       </div>
     </header>
