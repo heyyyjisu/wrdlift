@@ -2,6 +2,7 @@ import Link from "next/link"
 import { Button } from "./ui/button"
 import { createClient } from "@/lib/auth/supabaseServer"
 import LogoutButton from "./logoutButton"
+import Image from "next/image"
 
 export default async function Header() {
   const supabase = await createClient()

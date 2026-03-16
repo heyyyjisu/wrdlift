@@ -18,6 +18,7 @@ export const metadata = {
     template: "%s | Wrdlift",
     default: "Wrdlift",
   },
+  icons: { icon: "/logo.png" },
   description:
     "  Write a quick entry each day and see your word count instantly. Get friendly, learner-focused suggestions to make your writing clearer, more natural, and more confident.",
 }

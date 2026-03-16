@@ -32,16 +32,13 @@ export async function POST(request: Request) {
 export async function GET() {
   const supabase = await createClient()
   const { data, error } = await supabase.auth.getUser()
-  if (error || !data?.user)
+  if (error || !data?.user) {
     return NextResponse.json({ success: false }, { status: 401 })
-  const { data: journals, error: fetchError } = await getJournals(
-    supabase,
-    data.user.id
-  )
-  if (fetchError)
-    return NextResponse.json(
-      { success: false, error: fetchError },
-      { status: 500 }
-    )
-  return NextResponse.json({ success: true, data: journals })
+  }
+
+  try {
+    const { data: journals, count } = await getJournals(supabase, data.user.id)
+    return NextResponse.json({ seccess: true, data: journals, count })
+  } catch (error) {}
+  return NextResponse.json({ success: false, error: error }, { status: 500 })
 }
