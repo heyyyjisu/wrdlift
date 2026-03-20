@@ -25,9 +25,9 @@ export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
-  const [email, setEmail] = useState<string>("test@test.com")
+  const [email, setEmail] = useState<string>("")
   const [emailInvalid, setEmailInvalid] = useState<boolean>(false)
-  const [password, setPassword] = useState<string>("test1234")
+  const [password, setPassword] = useState<string>("")
   const [passwordInvalid, setPasswordInvalid] = useState<boolean>(false)
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const router = useRouter()

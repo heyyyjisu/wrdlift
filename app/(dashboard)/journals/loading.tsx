@@ -19,7 +19,8 @@ export default function Loading() {
             </EmptyMedia>
             <EmptyTitle>Getting your journals</EmptyTitle>
             <EmptyDescription>
-              Please wait while we bring you your journals 🤎
+              <p>Please wait while we bring you</p>
+              <p>your journals 🤎</p>
             </EmptyDescription>
           </EmptyHeader>
         </Empty>
