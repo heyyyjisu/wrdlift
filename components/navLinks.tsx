@@ -9,7 +9,7 @@ export default function NavLinks({ loggedIn }: { loggedIn: boolean }) {
   if (!loggedIn) return null
 
   const linkClass =
-    "cursor-pointer text-xs hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50"
+    "cursor-pointer text-xs hover:text-muted-foreground hover:underline sm:inline-block aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50"
 
   if (pathname === "/journals") {
     return (

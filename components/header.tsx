@@ -10,7 +10,7 @@ export default async function Header() {
   const loggedIn = Boolean(data?.user)
 
   return (
-    <header className="border-primary-400 relative z-20 flex items-center justify-between border-b bg-transparent px-4 py-3 md:px-8">
+    <header className="border-primary-400 sticky z-20 flex items-center justify-between border-b bg-transparent px-4 py-3 sm:px-[env(safe-area-inset-left)] sm:pr-[env(safe-area-inset-right)] md:px-8">
       <div className="flex items-center gap-4">
         <Link href={loggedIn ? "/journal" : "/"} className="text-lg font-bold">
           Wrdlift
@@ -22,7 +22,7 @@ export default async function Header() {
           <>
             <Link
               href="/login"
-              className="text-sm text-muted-foreground hover:underline sm:inline-block"
+              className="text-xs text-muted-foreground hover:underline sm:inline-block"
             >
               Log in
             </Link>
