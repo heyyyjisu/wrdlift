@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Page() {
   return (
     <div className="landing-gradient min-h-screen w-full bg-background text-foreground">
-      <main className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-12 px-6 py-20">
+      <main className="relative z-10 mx-auto mt-20 flex w-full max-w-6xl flex-col items-center gap-12 px-6 py-20">
         <section className="mx-auto max-w-3xl text-center">
           <h1 className="hero-gradient-text text-4xl font-extrabold sm:text-5xl">
             Wrdlift
