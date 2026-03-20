@@ -17,10 +17,9 @@ export default function Loading() {
             <EmptyMedia variant="icon">
               <Spinner />
             </EmptyMedia>
-            <EmptyTitle>Processing your request</EmptyTitle>
+            <EmptyTitle>Getting your journals</EmptyTitle>
             <EmptyDescription>
-              Please wait while we process your request. Do not refresh the
-              page.
+              Please wait while we bring you your journals 🤎
             </EmptyDescription>
           </EmptyHeader>
         </Empty>
