@@ -12,10 +12,8 @@ export default async function JournalPage() {
 
   return (
     <div className="landing-gradient min-h-screen bg-background text-foreground">
-      <div className="decorative-blobs" aria-hidden />
-
       <main className="relative z-10 container mx-auto px-6 py-12">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto w-full max-w-full md:max-w-6xl">
           <h1 className="hero-gradient-text mb-6 text-3xl font-extrabold">
             Your Journal
           </h1>
