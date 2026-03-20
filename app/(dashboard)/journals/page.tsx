@@ -62,6 +62,7 @@ export default async function JournalsPage({ searchParams }: PageProps) {
               pageCount={pageCount}
               pageSize={pageSize}
             />
+
             <PaginationSimple
               page={effectivePage}
               pageCount={pageCount}
