@@ -10,12 +10,7 @@ import {
 
 type Props = { page: number; pageCount: number; pageSize: number }
 
-export function PaginationSimple({
-  page,
-  pageCount,
-  pageSize,
-  onPageChange,
-}: Props) {
+export function PaginationSimple({ page, pageCount, pageSize }: Props) {
   if (!pageCount || pageCount <= 1) return null
   const maxButtons = 3
   const half = Math.floor(maxButtons / 2)
