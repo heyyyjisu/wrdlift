@@ -16,9 +16,9 @@ export default function Loading() {
             <EmptyMedia variant="icon">
               <Spinner />
             </EmptyMedia>
-            <EmptyTitle>Saving your journal</EmptyTitle>
+            <EmptyTitle>Loading</EmptyTitle>
             <EmptyDescription>
-              <p>Please wait while we save your journal 🤎</p>
+              <p>Please wait 🤎</p>
             </EmptyDescription>
           </EmptyHeader>
         </Empty>

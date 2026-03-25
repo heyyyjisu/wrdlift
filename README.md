@@ -88,7 +88,8 @@ This one cost me real debugging time. On iOS, any `<input>` or `<textarea>` with
 
 ## Screenshots
 
-> _Portfolio screenshots and app flow walkthrough coming soon._
+![Wrdlift Screenshot](/project/wrdlift-screenshot-3.png)
+![Wrdlift Screenshot](/project/wrdlift-screenshot-2.png)
 
 ---
 

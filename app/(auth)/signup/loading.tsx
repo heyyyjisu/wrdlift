@@ -16,9 +16,9 @@ export default function Loading() {
             <EmptyMedia variant="icon">
               <Spinner />
             </EmptyMedia>
-            <EmptyTitle>Signing up</EmptyTitle>
+            <EmptyTitle>Loading</EmptyTitle>
             <EmptyDescription>
-              <p>Please wait while we sign you up 🤎</p>
+              <p>Please wait 🤎</p>
             </EmptyDescription>
           </EmptyHeader>
         </Empty>
