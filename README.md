@@ -1,6 +1,7 @@
 # Wrdlift
 
 > A journaling web app for intermediate or above English speakers who have plateaued and want to keep growing.
+> Try out with test user. ID: test@test.com Password: test1234
 
 ---
 
@@ -67,13 +68,13 @@ The hardest part of the AI feature wasn't calling the API. It was making the res
 
 ## Lessons Learned
 
-**Prompt engineering is interface design.**
+**Prompt engineering is interface design**
 Writing a prompt that reliably produces structured, renderable output taught me that the LLM is less a magic box and more a collaborator you have to be precise with. The same instinct that makes a good API contract, clear input and predictable output, applies directly to prompts.
 
-**Getting familiar with Supabase RLS.**
+**Getting familiar with Supabase RLS**
 I was having an issue with the same error over and over again when I was working on the sign up and log in feature. When those were working, I couldn't save the journals and the app would break. I didn't understand why till I had a call with a friend who works in the field, and he straight away pointed out the `.select()` was in my route call but RLS wasn't set up for select. That was such a win for the day and I learned clearly.
 
-**Font size on inputs must be at least 16px - no exceptions.**
+**Font size on inputs must be at least 16px - no exceptions**
 This one cost me real debugging time. On iOS, any `<input>` or `<textarea>` with a font size below 16px triggers an automatic zoom for accessibility reasons. It's browser-enforced behaviour and cannot be overridden with CSS alone. Every input in Wrdlift is set to a minimum of 16px. A small detail that has an outsized impact on mobile usability.
 
 ---
