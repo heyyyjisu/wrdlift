@@ -1,6 +1,6 @@
 import OpenAI from "openai"
 
-const token = process.env.GITHUB_TOKEN
+const token = process.env.OPENAI_API_KEY
 
 export async function getJournalSuggestions({
   journalContent,
@@ -10,7 +10,7 @@ export async function getJournalSuggestions({
   repeatedWords: string[]
 }) {
   const client = new OpenAI({
-    baseURL: "https://models.github.ai/inference",
+    baseURL: "https://api.deepinfra.com/v1/openai",
     apiKey: token,
   })
 
@@ -53,7 +53,7 @@ Return **ONLY valid JSON**
       { role: "system", content: "You are an expert writing coach." },
       { role: "user", content: prompt },
     ],
-    model: "openai/gpt-4o-mini",
+    model: "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
     temperature: 1,
     max_tokens: 4096,
     top_p: 1,
