@@ -2,73 +2,66 @@ import Link from "next/link"
 
 export default function Page() {
   return (
-    <div className="landing-gradient min-h-screen w-full bg-background text-foreground">
-      <main className="relative z-10 mx-auto mt-20 flex w-full max-w-6xl flex-col items-center gap-12 px-6 py-20">
-        <section className="mx-auto max-w-3xl text-center">
-          <h1 className="hero-gradient-text text-4xl font-extrabold sm:text-5xl">
-            Wrdlift
+    <div className="min-h-screen w-full bg-background text-foreground">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-6 py-24 sm:py-32">
+
+        {/* Hero */}
+        <section className="mx-auto max-w-2xl text-center">
+          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-primary">
+            English Learning Journal
+          </p>
+          <h1 className="font-serif text-5xl font-bold leading-tight sm:text-7xl">
+            Write more.<br />Speak better.
           </h1>
-          <p className="mt-3 text-2xl font-semibold sm:text-3xl">
-            Improve your English through journaling
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            Write a quick entry each day and get instant word counts. Receive
+            learner-focused suggestions to make your English clearer, more
+            natural, and more confident.
           </p>
 
-          <p className="mt-4 text-lg text-muted-foreground">
-            Write a quick entry each day and see your word count instantly. Get
-            friendly, learner-focused suggestions to make your writing clearer,
-            more natural, and more confident.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/signup"
-              className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-xl hover:bg-primary/90"
+              className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-base font-medium text-primary-foreground transition-all duration-150 hover:bg-primary/85 active:scale-[0.98]"
             >
-              Get started — it&apos;s free
+              Get started - it&apos;s free
             </Link>
-
             <Link
               href="/login"
-              className="inline-flex items-center rounded-md border border-border bg-background px-4 py-2 text-sm font-medium shadow-xl hover:bg-muted"
+              className="inline-flex items-center rounded-lg border border-border bg-background px-6 py-3 text-base font-medium transition-all duration-150 hover:bg-muted active:scale-[0.98]"
             >
               Log in
             </Link>
           </div>
         </section>
 
-        <section className="grid w-full grid-cols-1 gap-8 sm:grid-cols-3">
-          <div className="feature-card left dark:bg-card40 rounded-lg bg-card p-6 text-center text-foreground shadow-xl">
-            <h3 className="text-lg font-semibold">
-              <p>🔍</p>
-              Word Count
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              See your entry&apos;s length instantly to track progress over
-              time.
+        {/* Features */}
+        <section className="grid w-full grid-cols-1 gap-6 sm:grid-cols-3">
+          <div className="rounded-lg border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-md">
+            <p className="mb-3 text-3xl">📖</p>
+            <h3 className="font-serif text-lg font-semibold">Word Count</h3>
+            <p className="mt-2 text-base text-muted-foreground">
+              See your entry length instantly to track progress over time.
             </p>
           </div>
 
-          <div className="feature-card rounded-lg bg-card p-6 text-center text-foreground shadow-xl dark:bg-card">
-            <h3 className="text-lg font-semibold">
-              <p>🪄</p>
-              Learner-Focused Suggestions
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Receive tailored tips aimed at non-native speakers for clearer,
-              more natural English.
+          <div className="rounded-lg border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-md">
+            <p className="mb-3 text-3xl">✨</p>
+            <h3 className="font-serif text-lg font-semibold">Smart Suggestions</h3>
+            <p className="mt-2 text-base text-muted-foreground">
+              Tips aimed at non-native speakers for clearer, more natural English.
             </p>
           </div>
 
-          <div className="feature-card right rounded-lg bg-card p-6 text-center text-foreground shadow-xl dark:bg-card">
-            <h3 className="text-lg font-semibold">
-              <p>✍🏼</p>
-              Tone & Grammar
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Get corrections and tone advice so your writing matches the
-              intent.
+          <div className="rounded-lg border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-md">
+            <p className="mb-3 text-3xl">📝</p>
+            <h3 className="font-serif text-lg font-semibold">Tone & Grammar</h3>
+            <p className="mt-2 text-base text-muted-foreground">
+              Corrections and tone advice so your writing matches your intent.
             </p>
           </div>
         </section>
+
       </main>
     </div>
   )

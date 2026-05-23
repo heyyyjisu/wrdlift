@@ -11,24 +11,27 @@ export default async function Header() {
   const loggedIn = Boolean(data?.user)
 
   return (
-    <header className="border-primary-400 sticky z-20 flex items-center justify-between border-b bg-transparent px-4 py-3 sm:px-6 md:px-8">
+    <header className="sticky z-20 flex items-center justify-between border-b border-border bg-background/90 px-4 py-4 backdrop-blur-sm sm:px-6 md:px-10">
       <div className="flex items-center gap-4">
-        <Link href={loggedIn ? "/journal" : "/"} className="text-lg font-bold">
+        <Link
+          href={loggedIn ? "/journal" : "/"}
+          className="font-serif text-xl font-bold tracking-tight"
+        >
           Wrdlift
         </Link>
         <Darkmode />
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
         {!loggedIn ? (
           <>
             <Link
               href="/login"
-              className="text-xs text-muted-foreground hover:underline sm:inline-block"
+              className="text-sm text-muted-foreground hover:text-foreground hover:underline"
             >
               Log in
             </Link>
-            <Button asChild>
+            <Button asChild size="sm">
               <Link href="/signup">Get started</Link>
             </Button>
           </>

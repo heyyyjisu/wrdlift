@@ -1,5 +1,4 @@
 import { JournalForm } from "@/components/journalForm"
-import { Button } from "@/components/ui/button"
 import { createClient } from "@/lib/auth/supabaseServer"
 import { redirect } from "next/navigation"
 
@@ -11,17 +10,26 @@ export default async function JournalPage() {
     redirect("/login")
   }
 
-  return (
-    <div className="landing-gradient min-h-screen bg-background text-foreground">
-      <main className="relative z-10 container mx-auto px-6 py-12">
-        <div className="mx-auto w-full max-w-full md:max-w-6xl">
-          <h1 className="hero-gradient-text mb-6 text-3xl font-extrabold">
-            Your Journal
-          </h1>
+  const today = new Date().toLocaleDateString("en-GB", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
 
-          <div className="feature-card rounded-lg bg-card p-6 shadow-xl dark:bg-card">
-            <JournalForm />
+  return (
+    <div className="min-h-screen bg-background">
+      <main className="container mx-auto px-4 py-10 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-8 border-b border-border pb-6">
+            <p className="text-xs font-medium uppercase tracking-widest text-primary">
+              {today}
+            </p>
+            <h1 className="mt-1 font-serif text-3xl font-bold sm:text-4xl">
+              Today&apos;s Entry
+            </h1>
           </div>
+          <JournalForm />
         </div>
       </main>
     </div>

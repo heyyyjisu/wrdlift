@@ -17,5 +17,5 @@ export default function LogoutButton() {
 
     router.push("/")
   }
-  return <Button onClick={handleLogout}>Log out</Button>
+  return <Button onClick={handleLogout} variant="ghost" size="sm">Log out</Button>
 }

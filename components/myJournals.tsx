@@ -204,67 +204,54 @@ export function MyJournals({
                             {shownMobile}
                           </Button>
                         </DialogTrigger>
-                        <DialogContent className="flex max-h-[65vh] w-full flex-col gap-4 p-4 sm:h-auto sm:max-w-xl">
-                          <DialogHeader>
-                            <DialogTitle>{shown}</DialogTitle>
-                            <DialogDescription>
-                              Saved date{" "}
-                              {j.createdAtIso ? (
-                                <time dateTime={j.createdAtIso}>
-                                  {j.createdAtDisplay ??
-                                    `${new Date(j.createdAtIso).toLocaleDateString("en-GB")} at ${new Date(j.createdAtIso).toLocaleTimeString("en-GB", { hour12: false })}`}
-                                </time>
-                              ) : (
-                                "-"
-                              )}
-                            </DialogDescription>
-                          </DialogHeader>
-                          <div className="no-scrollbar max-h-[65vh] overflow-y-auto px-4">
-                            <p className="mb-4 leading-normal">
+                        <DialogContent className="flex max-h-[85vh] w-full flex-col overflow-hidden p-0 sm:max-w-xl">
+                          <div className="px-6 pb-4 pt-6">
+                            <DialogHeader>
+                              <DialogTitle className="font-serif text-lg leading-snug">{shown}</DialogTitle>
+                              <DialogDescription className="mt-1">
+                                {j.createdAtIso ? (
+                                  <time dateTime={j.createdAtIso}>
+                                    {j.createdAtDisplay ??
+                                      `${new Date(j.createdAtIso).toLocaleDateString("en-GB")} at ${new Date(j.createdAtIso).toLocaleTimeString("en-GB", { hour12: false })}`}
+                                  </time>
+                                ) : "-"}
+                              </DialogDescription>
+                            </DialogHeader>
+                          </div>
+                          <div className="h-px bg-border" />
+                          <div className="no-scrollbar flex-1 overflow-y-auto px-6 py-5">
+                            <div className="font-serif text-base leading-relaxed">
                               {active ? (
                                 highlightText(
                                   active.content || "",
-                                  Array.isArray(
-                                    active.suggestions?.replacements
-                                  )
+                                  Array.isArray(active.suggestions?.replacements)
                                     ? active.suggestions.replacements
                                     : []
                                 )
                               ) : (
-                                <p className="text-muted-foreground">
-                                  No content
-                                </p>
+                                <p className="text-muted-foreground">No content</p>
                               )}
-                            </p>
-
+                            </div>
                             {active?.suggestions?.replacements &&
                               Array.isArray(active.suggestions.replacements) &&
                               active.suggestions.replacements.length > 0 && (
-                                <div className="mt-4 space-y-3 border-t pt-4">
-                                  <h4 className="text-sm font-semibold">
+                                <div className="mt-6 border-t border-border pt-5">
+                                  <p className="mb-3 text-xs font-medium uppercase tracking-widest text-primary">
                                     Suggestions
-                                  </h4>
-                                  <ul className="space-y-2">
-                                    {active.suggestions.replacements.map(
-                                      (r, i) => (
-                                        <li key={i} className="text-sm">
-                                          <span className="font-medium text-foreground">
-                                            {r.originalWord}
-                                          </span>
-                                          <span className="mx-2 text-muted-foreground">
-                                            🔍
-                                          </span>
-                                          <span className="font-medium text-muted-foreground">
-                                            {r.suggestedWord}
-                                          </span>
-                                          {r.explanation ? (
-                                            <div className="mt-1 text-xs text-muted-foreground">
-                                              {r.explanation}
-                                            </div>
-                                          ) : null}
-                                        </li>
-                                      )
-                                    )}
+                                  </p>
+                                  <ul className="space-y-3">
+                                    {active.suggestions.replacements.map((r, i) => (
+                                      <li key={i} className="text-sm">
+                                        <div className="flex items-center gap-2">
+                                          <span className="font-medium">{r.originalWord}</span>
+                                          <span className="text-muted-foreground">→</span>
+                                          <span className="font-medium text-primary">{r.suggestedWord}</span>
+                                        </div>
+                                        {r.explanation && (
+                                          <p className="mt-0.5 text-xs text-muted-foreground">{r.explanation}</p>
+                                        )}
+                                      </li>
+                                    ))}
                                   </ul>
                                 </div>
                               )}
@@ -417,70 +404,54 @@ export function MyJournals({
                             {shown}
                           </Button>
                         </DialogTrigger>
-                        <DialogContent className="m-4 max-h-[80vh] w-full md:max-w-xl md:p-8">
-                          <DialogHeader>
-                            <DialogTitle>{shown}</DialogTitle>
-                            <DialogDescription>
-                              Saved date{" "}
-                              {j.createdAtIso ? (
-                                <time dateTime={j.createdAtIso}>
-                                  {" "}
-                                  {j.createdAtDisplay ??
-                                    `${new Date(j.createdAtIso).toLocaleDateString("en-GB")} at ${new Date(j.createdAtIso).toLocaleTimeString("en-GB", { hour12: false })}`}{" "}
-                                </time>
-                              ) : (
-                                "-"
-                              )}
-                            </DialogDescription>
-                          </DialogHeader>
-                          <div className="no-scrollbar max-h-[50vh] overflow-y-auto px-4">
-                            <div className="mb-4 leading-normal">
+                        <DialogContent className="max-h-[85vh] w-full overflow-hidden p-0 md:max-w-xl">
+                          <div className="px-8 pb-5 pt-8">
+                            <DialogHeader>
+                              <DialogTitle className="font-serif text-xl leading-snug">{shown}</DialogTitle>
+                              <DialogDescription className="mt-1">
+                                {j.createdAtIso ? (
+                                  <time dateTime={j.createdAtIso}>
+                                    {j.createdAtDisplay ??
+                                      `${new Date(j.createdAtIso).toLocaleDateString("en-GB")} at ${new Date(j.createdAtIso).toLocaleTimeString("en-GB", { hour12: false })}`}
+                                  </time>
+                                ) : "-"}
+                              </DialogDescription>
+                            </DialogHeader>
+                          </div>
+                          <div className="h-px bg-border" />
+                          <div className="no-scrollbar max-h-[55vh] overflow-y-auto px-8 py-6">
+                            <div className="font-serif text-base leading-relaxed">
                               {active ? (
-                                <p className="mb-4 leading-normal">
-                                  {highlightText(
-                                    active.content || "",
-                                    Array.isArray(
-                                      active.suggestions?.replacements
-                                    )
-                                      ? active.suggestions.replacements
-                                      : []
-                                  )}
-                                </p>
+                                highlightText(
+                                  active.content || "",
+                                  Array.isArray(active.suggestions?.replacements)
+                                    ? active.suggestions.replacements
+                                    : []
+                                )
                               ) : (
-                                <p className="text-muted-foreground">
-                                  No content
-                                </p>
+                                <p className="text-muted-foreground">No content</p>
                               )}
                             </div>
-
                             {active?.suggestions?.replacements &&
                               Array.isArray(active.suggestions.replacements) &&
                               active.suggestions.replacements.length > 0 && (
-                                <div className="mt-4 space-y-3 border-t pt-4">
-                                  <h4 className="text-sm font-semibold">
+                                <div className="mt-6 border-t border-border pt-6">
+                                  <p className="mb-4 text-xs font-medium uppercase tracking-widest text-primary">
                                     Suggestions
-                                  </h4>
-                                  <ul className="space-y-2">
-                                    {active.suggestions.replacements.map(
-                                      (r, i) => (
-                                        <li key={i} className="text-sm">
-                                          <span className="font-medium text-foreground">
-                                            {r.originalWord}
-                                          </span>
-                                          <span className="mx-2 text-muted-foreground">
-                                            🔍
-                                          </span>
-                                          <span className="font-medium text-muted-foreground">
-                                            {r.suggestedWord}
-                                          </span>
-                                          {r.explanation ? (
-                                            <div className="mt-1 text-xs text-muted-foreground">
-                                              {r.explanation}
-                                            </div>
-                                          ) : null}
-                                        </li>
-                                      )
-                                    )}
+                                  </p>
+                                  <ul className="space-y-4">
+                                    {active.suggestions.replacements.map((r, i) => (
+                                      <li key={i} className="text-sm">
+                                        <div className="flex items-center gap-2">
+                                          <span className="font-medium">{r.originalWord}</span>
+                                          <span className="text-muted-foreground">→</span>
+                                          <span className="font-medium text-primary">{r.suggestedWord}</span>
+                                        </div>
+                                        {r.explanation && (
+                                          <p className="mt-1 text-xs text-muted-foreground">{r.explanation}</p>
+                                        )}
+                                      </li>
+                                    ))}
                                   </ul>
                                 </div>
                               )}

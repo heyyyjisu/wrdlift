@@ -47,28 +47,28 @@ export default async function JournalsPage({ searchParams }: PageProps) {
   }))
 
   return (
-    <div className="landing-gradient min-h-screen bg-background text-foreground">
-      <div className="decorative-blobs" aria-hidden />
-
-      <main className="relative z-10 container mx-auto mb-8 px-6 py-12">
-        <div className="mx-auto max-w-6xl">
-          <h1 className="hero-gradient-text mb-6 text-3xl font-extrabold">
-            Your Journals
-          </h1>
-
-          <div className="feature-card rounded-lg bg-card p-6 shadow-xl dark:bg-card">
-            <MyJournals
-              initialJournals={journalsForClient}
-              page={effectivePage}
-              pageCount={pageCount}
-              pageSize={pageSize}
-            />
-            <PaginationSimple
-              page={effectivePage}
-              pageCount={pageCount}
-              pageSize={pageSize}
-            />
+    <div className="min-h-screen bg-background">
+      <main className="container mx-auto px-4 py-10 sm:px-6 md:px-10">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-8 border-b border-border pb-6">
+            <p className="text-xs font-medium uppercase tracking-widest text-primary">
+              My Collection
+            </p>
+            <h1 className="mt-1 font-serif text-3xl font-bold sm:text-4xl">
+              Your Journals
+            </h1>
           </div>
+          <MyJournals
+            initialJournals={journalsForClient}
+            page={effectivePage}
+            pageCount={pageCount}
+            pageSize={pageSize}
+          />
+          <PaginationSimple
+            page={effectivePage}
+            pageCount={pageCount}
+            pageSize={pageSize}
+          />
         </div>
       </main>
     </div>
