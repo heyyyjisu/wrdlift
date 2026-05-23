@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function Page() {
   return (
     <div className="min-h-screen w-full bg-background text-foreground">
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-20 px-6 py-24 sm:py-32">
+      <main className="mx-auto flex w-full max-w-5xl flex-col gap-10 px-6 py-12 sm:py-16">
 
         {/* Hero */}
         <section className="mx-auto max-w-2xl text-center">
